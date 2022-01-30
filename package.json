@@ -1,0 +1,21 @@
+{
+  "name": "react-native-instapay-qr",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "homepage": "https://github.com/dcangulo/react-native-instapay-qr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcangulo/react-native-instapay-qr.git"
+  },
+  "author": {
+    "name": "David Angulo",
+    "email": "hello@davidangulo.xyz",
+    "url": "https://www.davidangulo.xyz"
+  },
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {}
+}
