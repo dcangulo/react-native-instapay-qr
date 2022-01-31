@@ -5,6 +5,24 @@
 
 Extract relevant data from InstaPay QR code.
 
+## Compatibility
+|         | iOS                | Android            | Web                | Windows | macOS |
+|---------|--------------------|--------------------|--------------------|---------|-------|
+| Expo    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:     | :x:   |
+| Vanilla | :x:                | :x:                | :x:                | :x:     | :x:   |
+
+## Installation
+```bash
+yarn add react-native-instapay-qr
+```
+
+## Installation (Expo)
+```bash
+expo install react-native-instapay-qr expo-camera expo-barcode-scanner
+npx pod-install # iOS Only
+```
+> :bulb: If you use the Expo managed workflow you will see "CocoaPods is not supported in this project" - this is fine, it's not necessary.
+
 ## Usage
 ```js
 import InstaPayQr from 'react-native-instapay-qr';
