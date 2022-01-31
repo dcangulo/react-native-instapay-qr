@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Camera } from 'expo-camera';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import parseQrData from './parse-qr-data';
+import extractQrData from './extract-qr-data';
 
 export default function InstaPayQr(props) {
   const {
@@ -30,8 +31,9 @@ export default function InstaPayQr(props) {
         barCodeScannerSettings={{ barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr] }}
         onBarCodeScanned={({ data }) => {
           const parsedData = parseQrData(data);
+          const qrData = extractQrData(parsedData);
 
-          onRead(parsedData);
+          onRead(qrData);
         }}
       >
         {children}
