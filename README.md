@@ -5,6 +5,41 @@
 
 Extract relevant data from InstaPay QR code.
 
+## Usage
+```js
+import InstaPayQr from 'react-native-instapay-qr';
+
+function App() {
+  return (
+    <InstaPayQr
+      containerStyle={{ height: 300, width: 300 }}
+      cameraStyle={{ flex: 1 }}
+      onRead={(data) => console.log(data)}
+    />
+  );
+}
+```
+
+### Response Data
+```js
+{
+  countryCode: 'PH',
+  city: 'Makati',
+  name: 'Account Name',
+  accountNumber: 'XXXXXXXXXXXX',
+  swiftCode: 'UBPHPHMMXXX',
+  bankName: 'UNION BANK OF THE PHILIPPINES',
+}
+```
+
+## Props
+| Attribute      | Type               | Default      |
+| -------------- | ------------------ | ------------ |
+| containerStyle | React Native Style | `{}`         |
+| cameraStyle    | React Native Style | `{}`         |
+| onRead         | Function           | `() => null` |
+| children       | Node               | `null`       |
+
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 ## License
