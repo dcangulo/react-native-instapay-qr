@@ -35,9 +35,8 @@ export default function InstaPayQr(props) {
 
           onRead(qrData);
         }}
-      >
-        {children}
-      </Camera>
+      />
+      {children}
     </View>
   );
 }
