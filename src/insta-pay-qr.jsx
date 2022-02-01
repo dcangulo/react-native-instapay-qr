@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { Camera } from 'expo-camera';
-import { BarCodeScanner } from 'expo-barcode-scanner';
+import { isExpo, Camera, BarCodeScanner } from './expo-modules';
 import parseQrData from './parse-qr-data';
 import extractQrData from './extract-qr-data';
+import useCameraPermission from './use-camera-permission';
+import NativeCamera from './native-camera';
 
+const CameraComponent = isExpo ? Camera : NativeCamera;
 export default function InstaPayQr(props) {
   const {
     style,
@@ -13,22 +15,16 @@ export default function InstaPayQr(props) {
     children,
     onRead,
   } = props;
-  const [hasPermission, setHasPermission] = useState(false);
+  const hasCameraPermission = useCameraPermission();
 
-  useEffect(() => {
-    Camera
-      .requestCameraPermissionsAsync()
-      .then(({ status }) => setHasPermission(status === 'granted'));
-  }, []);
-
-  if (!hasPermission) return <View style={style} />;
+  if (!hasCameraPermission) return <View style={style} />;
 
   return (
     <View style={style}>
-      <Camera
+      <CameraComponent
         style={cameraStyle}
-        type={Camera.Constants.Type.back}
-        barCodeScannerSettings={{ barCodeTypes: [BarCodeScanner.Constants.BarCodeType.qr] }}
+        type={Camera?.Constants?.Type?.back}
+        barCodeScannerSettings={{ barCodeTypes: [BarCodeScanner?.Constants?.BarCodeType?.qr] }}
         onBarCodeScanned={({ data }) => {
           const parsedData = parseQrData(data);
           const qrData = extractQrData(parsedData);
