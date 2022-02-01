@@ -58,6 +58,9 @@ function App() {
 | onRead         | Function           | `() => null` |
 | children       | Node               | `null`       |
 
+## Changelogs
+See [CHANGELOGS.md](CHANGELOGS.md)
+
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 ## License
