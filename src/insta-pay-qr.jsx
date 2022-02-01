@@ -1,13 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { isExpo, Camera, BarCodeScanner } from './expo-modules';
-import parseQrData from './parse-qr-data';
-import extractQrData from './extract-qr-data';
-import useCameraPermission from './use-camera-permission';
-import NativeCamera from './native-camera';
+import Camera from './camera';
+import parseQrData from './utilities/parse-qr-data';
+import extractQrData from './utilities/extract-qr-data';
+import useCameraPermission from './utilities/use-camera-permission';
 
-const CameraComponent = isExpo ? Camera : NativeCamera;
 export default function InstaPayQr(props) {
   const {
     style,
@@ -21,10 +19,8 @@ export default function InstaPayQr(props) {
 
   return (
     <View style={style}>
-      <CameraComponent
+      <Camera
         style={cameraStyle}
-        type={Camera?.Constants?.Type?.back}
-        barCodeScannerSettings={{ barCodeTypes: [BarCodeScanner?.Constants?.BarCodeType?.qr] }}
         onBarCodeScanned={({ data }) => {
           const parsedData = parseQrData(data);
           const qrData = extractQrData(parsedData);

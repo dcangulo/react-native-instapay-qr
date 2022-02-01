@@ -51,7 +51,7 @@ public class InstaPayQrManager extends SimpleViewManager<CodeScannerView> {
 
   @Override
   public void onDropViewInstance(CodeScannerView view) {
+    codeScanner.releaseResources();
     super.onDropViewInstance(view);
-    // codeScanner.releaseResources();
   }
 }
