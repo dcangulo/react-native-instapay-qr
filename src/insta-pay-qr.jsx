@@ -8,7 +8,7 @@ import extractQrData from './extract-qr-data';
 
 export default function InstaPayQr(props) {
   const {
-    containerStyle,
+    style,
     cameraStyle,
     children,
     onRead,
@@ -21,10 +21,10 @@ export default function InstaPayQr(props) {
       .then(({ status }) => setHasPermission(status === 'granted'));
   }, []);
 
-  if (!hasPermission) return <View style={containerStyle} />;
+  if (!hasPermission) return <View style={style} />;
 
   return (
-    <View style={containerStyle}>
+    <View style={style}>
       <Camera
         style={cameraStyle}
         type={Camera.Constants.Type.back}
@@ -42,14 +42,14 @@ export default function InstaPayQr(props) {
 }
 
 InstaPayQr.defaultProps = {
-  containerStyle: {},
+  style: {},
   cameraStyle: {},
   children: null,
   onRead: () => null,
 };
 
 InstaPayQr.propTypes = {
-  containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   cameraStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   children: PropTypes.node,
   onRead: PropTypes.func,
