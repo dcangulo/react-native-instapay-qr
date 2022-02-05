@@ -23,5 +23,6 @@ module.exports = {
     'jsx-quotes': ['error', 'prefer-single'],
     'import/no-unresolved': 0,
     'consistent-return': 0,
+    'react/jsx-filename-extension': 0,
   },
 };
