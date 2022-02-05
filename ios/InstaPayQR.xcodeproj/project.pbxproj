@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5DE0B02527AE308A0071D962 /* InstaPayQRManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02427AE308A0071D962 /* InstaPayQRManager.m */; };
-		5DE0B02827AE33E30071D962 /* InstaPayQRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02727AE33E30071D962 /* InstaPayQRManager.swift */; };
-		5DE0B02A27AE34340071D962 /* InstaPayQREventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02927AE34340071D962 /* InstaPayQREventEmitter.swift */; };
-		5DE0B02C27AE349C0071D962 /* InstaPayQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02B27AE349C0071D962 /* InstaPayQR.swift */; };
+		5DE0B02527AE308A0071D962 /* InstaPayQrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02427AE308A0071D962 /* InstaPayQrManager.m */; };
+		5DE0B02827AE33E30071D962 /* InstaPayQrManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02727AE33E30071D962 /* InstaPayQrManager.swift */; };
+		5DE0B02A27AE34340071D962 /* InstaPayQrEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02927AE34340071D962 /* InstaPayQrEventEmitter.swift */; };
+		5DE0B02C27AE349C0071D962 /* InstaPayQr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE0B02B27AE349C0071D962 /* InstaPayQr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +27,11 @@
 
 /* Begin PBXFileReference section */
 		5DE0B01827AE2F680071D962 /* libinstapayqr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinstapayqr.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DE0B02427AE308A0071D962 /* InstaPayQRManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaPayQRManager.m; sourceTree = "<group>"; };
+		5DE0B02427AE308A0071D962 /* InstaPayQrManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaPayQrManager.m; sourceTree = "<group>"; };
 		5DE0B02627AE33E20071D962 /* instapayqr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instapayqr-Bridging-Header.h"; sourceTree = "<group>"; };
-		5DE0B02727AE33E30071D962 /* InstaPayQRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQRManager.swift; sourceTree = "<group>"; };
-		5DE0B02927AE34340071D962 /* InstaPayQREventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQREventEmitter.swift; sourceTree = "<group>"; };
-		5DE0B02B27AE349C0071D962 /* InstaPayQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQR.swift; sourceTree = "<group>"; };
+		5DE0B02727AE33E30071D962 /* InstaPayQrManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQrManager.swift; sourceTree = "<group>"; };
+		5DE0B02927AE34340071D962 /* InstaPayQrEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQrEventEmitter.swift; sourceTree = "<group>"; };
+		5DE0B02B27AE349C0071D962 /* InstaPayQr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPayQr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +48,10 @@
 		5DE0B00F27AE2F680071D962 = {
 			isa = PBXGroup;
 			children = (
-				5DE0B02B27AE349C0071D962 /* InstaPayQR.swift */,
-				5DE0B02927AE34340071D962 /* InstaPayQREventEmitter.swift */,
-				5DE0B02727AE33E30071D962 /* InstaPayQRManager.swift */,
-				5DE0B02427AE308A0071D962 /* InstaPayQRManager.m */,
+				5DE0B02B27AE349C0071D962 /* InstaPayQr.swift */,
+				5DE0B02927AE34340071D962 /* InstaPayQrEventEmitter.swift */,
+				5DE0B02727AE33E30071D962 /* InstaPayQrManager.swift */,
+				5DE0B02427AE308A0071D962 /* InstaPayQrManager.m */,
 				5DE0B01927AE2F680071D962 /* Products */,
 				5DE0B02627AE33E20071D962 /* instapayqr-Bridging-Header.h */,
 			);
@@ -100,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5DE0B01327AE2F680071D962 /* Build configuration list for PBXProject "InstaPayQR" */;
+			buildConfigurationList = 5DE0B01327AE2F680071D962 /* Build configuration list for PBXProject "InstaPayQr" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,10 +123,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DE0B02A27AE34340071D962 /* InstaPayQREventEmitter.swift in Sources */,
-				5DE0B02527AE308A0071D962 /* InstaPayQRManager.m in Sources */,
-				5DE0B02827AE33E30071D962 /* InstaPayQRManager.swift in Sources */,
-				5DE0B02C27AE349C0071D962 /* InstaPayQR.swift in Sources */,
+				5DE0B02A27AE34340071D962 /* InstaPayQrEventEmitter.swift in Sources */,
+				5DE0B02527AE308A0071D962 /* InstaPayQrManager.m in Sources */,
+				5DE0B02827AE33E30071D962 /* InstaPayQrManager.swift in Sources */,
+				5DE0B02C27AE349C0071D962 /* InstaPayQr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5DE0B01327AE2F680071D962 /* Build configuration list for PBXProject "InstaPayQR" */ = {
+		5DE0B01327AE2F680071D962 /* Build configuration list for PBXProject "InstaPayQr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DE0B01F27AE2F680071D962 /* Debug */,
