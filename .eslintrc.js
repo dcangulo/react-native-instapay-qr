@@ -22,5 +22,6 @@ module.exports = {
   rules: {
     'jsx-quotes': ['error', 'prefer-single'],
     'import/no-unresolved': 0,
+    'consistent-return': 0,
   },
 };

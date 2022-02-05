@@ -30,7 +30,7 @@ import InstaPayQr from 'react-native-instapay-qr';
 function App() {
   return (
     <InstaPayQr
-      containerStyle={{ height: 300, width: 300 }}
+      style={{ height: 300, width: 300 }}
       cameraStyle={{ flex: 1 }}
       onRead={(data) => console.log(data)}
     />
@@ -51,12 +51,12 @@ function App() {
 ```
 
 ## Props
-| Attribute      | Type               | Default      |
-| -------------- | ------------------ | ------------ |
-| containerStyle | React Native Style | `{}`         |
-| cameraStyle    | React Native Style | `{}`         |
-| onRead         | Function           | `() => null` |
-| children       | Node               | `null`       |
+| Attribute   | Type               | Default      |
+| ----------- | ------------------ | ------------ |
+| style       | React Native Style | `{}`         |
+| cameraStyle | React Native Style | `{}`         |
+| onRead      | Function           | `() => null` |
+| children    | Node               | `null`       |
 
 ## Changelogs
 See [CHANGELOGS.md](CHANGELOGS.md)
