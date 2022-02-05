@@ -3,14 +3,15 @@ import { NativeModules, NativeEventEmitter, requireNativeComponent } from 'react
 import PropTypes from 'prop-types';
 
 const NativeCameraComponent = requireNativeComponent('InstaPayQr');
-const { InstaPayQrManager } = NativeModules;
+const { InstaPayQrManager, InstaPayQrEventEmitter } = NativeModules;
 
 export default function NativeCamera({ onBarCodeScanned, style }) {
   useEffect(() => {
-    const InstaPayQrEventEmitter = new NativeEventEmitter(InstaPayQrManager);
-    const listener = InstaPayQrEventEmitter.addListener('onInstaPayQrRead', onBarCodeScanned);
+    const nativeEvent = InstaPayQrManager ?? InstaPayQrEventEmitter;
+    const eventEmitter = new NativeEventEmitter(nativeEvent);
+    const eventListener = eventEmitter.addListener('onInstaPayQrRead', onBarCodeScanned);
 
-    return () => listener.remove();
+    return () => eventListener.remove();
   }, [onBarCodeScanned]);
 
   return <NativeCameraComponent style={style} />;

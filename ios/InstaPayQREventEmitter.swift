@@ -1,5 +1,5 @@
 //
-//  InstaPayQREventEmitter.swift
+//  InstaPayQrEventEmitter.swift
 //  instapayqr
 //
 //  Created by David Angulo on 2/5/22.
@@ -7,13 +7,13 @@
 
 import React
 
-@objc(InstaPayQREventEmitter)
-class InstaPayQREventEmitter: RCTEventEmitter {
+@objc(InstaPayQrEventEmitter)
+class InstaPayQrEventEmitter : RCTEventEmitter {
   public static var emitter: RCTEventEmitter!
 
   override init() {
     super.init()
-    InstaPayQREventEmitter.emitter = self
+    InstaPayQrEventEmitter.emitter = self
   }
 
   override class func requiresMainQueueSetup() -> Bool {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PermissionsAndroid } from 'react-native';
+import { PermissionsAndroid, Platform } from 'react-native';
 import { isExpo, Camera } from './expo-modules';
 
 export default function useCameraPermission() {
@@ -11,6 +11,8 @@ export default function useCameraPermission() {
         .requestCameraPermissionsAsync()
         .then(({ status }) => setHasCameraPermission(status === 'granted'));
     } else {
+      if (Platform.OS !== 'android') return setHasCameraPermission(true);
+
       PermissionsAndroid
         .request(PermissionsAndroid.PERMISSIONS.CAMERA, {
           title: 'Use Camera Permission',

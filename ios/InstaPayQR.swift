@@ -1,5 +1,5 @@
 //
-//  InstaPayQR.swift
+//  InstaPayQr.swift
 //  instapayqr
 //
 //  Created by David Angulo on 2/5/22.
@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class InstaPayQR : UIView, AVCaptureMetadataOutputObjectsDelegate {
+class InstaPayQr : UIView, AVCaptureMetadataOutputObjectsDelegate {
   override func layoutSubviews() {
     super.layoutSubviews()
 
@@ -48,7 +48,7 @@ class InstaPayQR : UIView, AVCaptureMetadataOutputObjectsDelegate {
     guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
     guard let stringValue = readableObject.stringValue else { return }
     
-    InstaPayQREventEmitter.emitter.sendEvent(withName:"onInstaPayQrRead", body:["data": stringValue])
+    InstaPayQrEventEmitter.emitter.sendEvent(withName:"onInstaPayQrRead", body:["data": stringValue])
   }
 }
 
