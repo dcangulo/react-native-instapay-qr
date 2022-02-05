@@ -24,5 +24,6 @@ module.exports = {
     'import/no-unresolved': 0,
     'consistent-return': 0,
     'react/jsx-filename-extension': 0,
+    'jsx-a11y/media-has-caption': 0,
   },
 };
