@@ -9,6 +9,6 @@ Pod::Spec.new do |spec|
   spec.author = { package['author']['name'] => package['author']['email'] }
   spec.platforms = { ios: '10.0' }
   spec.source = { git: package['repository']['url'], tag: "v#{spec.version}" }
-  spec.ios.source_files = 'ios/*.{h,m}'
+  spec.ios.source_files = 'ios/*.{h,m,swift}'
   spec.dependency 'React-Core'
 end
