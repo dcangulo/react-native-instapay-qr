@@ -6,17 +6,23 @@
 Extract relevant data from InstaPay QR code.
 
 ## Compatibility
-|         | iOS                | Android            | Web                | Windows | macOS |
-|---------|--------------------|--------------------|--------------------|---------|-------|
-| Expo    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:     | :x:   |
-| Vanilla | :x:                | :x:                | :x:                | :x:     | :x:   |
+|         | iOS                | Android            | Web                | Windows         | macOS           |
+|---------|--------------------|--------------------|--------------------|-----------------|-----------------|
+| Expo    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :no_entry_sign: | :no_entry_sign: |
+| Native  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:             | :x:             |
 
 ## Installation
 ```bash
 yarn add react-native-instapay-qr
+npx pod-install # iOS Only
 ```
 
-## Installation (Expo)
+### Native (Web)
+```bash
+yarn add react-native-instapay-qr @zxing/library @zxing/browser
+```
+
+### Expo
 ```bash
 expo install react-native-instapay-qr expo-camera expo-barcode-scanner
 npx pod-install # iOS Only
@@ -56,6 +62,7 @@ function App() {
 | style       | React Native Style | `{}`         |
 | cameraStyle | React Native Style | `{}`         |
 | onRead      | Function           | `() => null` |
+| scanning    | Boolean            | `true`       |
 | children    | Node               | `null`       |
 
 ## Changelogs

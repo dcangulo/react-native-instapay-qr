@@ -10,8 +10,9 @@ export default function InstaPayQr(props) {
   const {
     style,
     cameraStyle,
-    children,
     onRead,
+    scanning,
+    children,
   } = props;
   const hasCameraPermission = useCameraPermission();
 
@@ -25,7 +26,7 @@ export default function InstaPayQr(props) {
           const parsedData = parseQrData(data);
           const qrData = extractQrData(parsedData);
 
-          onRead(qrData);
+          if (scanning) onRead(qrData);
         }}
       />
       {children}
@@ -36,13 +37,15 @@ export default function InstaPayQr(props) {
 InstaPayQr.defaultProps = {
   style: {},
   cameraStyle: {},
-  children: null,
   onRead: () => null,
+  scanning: true,
+  children: null,
 };
 
 InstaPayQr.propTypes = {
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   cameraStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  children: PropTypes.node,
+  scanning: PropTypes.bool,
   onRead: PropTypes.func,
+  children: PropTypes.node,
 };
