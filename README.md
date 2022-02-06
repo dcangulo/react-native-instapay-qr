@@ -27,7 +27,7 @@ Add the following to your `AndroidManifest.xml`:
 Add the following to your `Info.plist`:
 ```xml
 <key>NSCameraUsageDescription</key>
-<string>Pls allow</string>
+<string/>
 ```
 
 ## Installation (Expo)
