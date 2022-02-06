@@ -14,7 +14,7 @@ export default function NativeCamera({ onBarCodeScanned, style }) {
     return () => decoder.then((controls) => controls.stop());
   }, [onBarCodeScanned]);
 
-  return <video ref={elementRef} style={style} />;
+  return <video ref={elementRef} style={{ ...style, objectFit: 'cover' }} />;
 }
 
 NativeCamera.defaultProps = defaultProps;
