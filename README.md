@@ -31,14 +31,25 @@ npx pod-install # iOS Only
 
 ## Usage
 ```js
+import { useState } from 'react';
 import InstaPayQr from 'react-native-instapay-qr';
 
 function App() {
+  const [scanning, setScanning] = useState(true);
+
+  const onRead = (data, errors) {
+    if (errors.length > 0) return;
+
+    console.log(data);
+    setScanning(false);
+  };
+
   return (
     <InstaPayQr
       style={{ height: 300, width: 300 }}
       cameraStyle={{ flex: 1 }}
-      onRead={(data) => console.log(data)}
+      onRead={onRead}
+      scanning={scanning}
     />
   );
 }

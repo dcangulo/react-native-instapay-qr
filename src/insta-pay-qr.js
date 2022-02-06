@@ -5,6 +5,7 @@ import Camera from './camera';
 import parseQrData from './utilities/parse-qr-data';
 import extractQrData from './utilities/extract-qr-data';
 import useCameraPermission from './utilities/use-camera-permission';
+import getErrors from './utilities/get-errors';
 
 export default function InstaPayQr(props) {
   const {
@@ -25,8 +26,9 @@ export default function InstaPayQr(props) {
         onBarCodeScanned={({ data }) => {
           const parsedData = parseQrData(data);
           const qrData = extractQrData(parsedData);
+          const errors = getErrors(qrData);
 
-          if (scanning) onRead(qrData);
+          if (scanning) onRead(qrData, errors);
         }}
       />
       {children}

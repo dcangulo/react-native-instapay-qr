@@ -1,43 +1,21 @@
-const BANK_INFO_KEY = '27';
-const SWIFT_CODE_KEY = '01';
-const ACCOUNT_NUMBER_KEY = '04';
-const COUNTRY_CODE_KEY = '58';
-const NAME_KEY = '59';
-const CITY_KEY = '60';
+import BANK_INFO from './bank-info';
 
-const SWIFT_CODE_BANK_INFO = {
-  BNORPHMMXXX: {
-    name: 'BDO UNIBANK, INC.',
-    accountNumberPattern: /^\d{1,12}$/,
-  },
-  BOPIPHMMXXX: {
-    name: 'BANK OF THE PHILIPPINE ISLANDS',
-    accountNumberPattern: /^(\d{10}|\d{14})$/,
-  },
-  DCPHPHM1XXX: {
-    name: 'DCPAY PHILIPPINES, INC',
-    accountNumberPattern: /^\d{11}$/,
-  },
-  GXCHPHM2XXX: {
-    name: 'G-XCHANGE, INC.',
-    accountNumberPattern: /^\d{11}$/,
-  },
-  PAPHPHM1XXX: {
-    name: 'PAYMAYA PHILIPPINES INC.',
-    accountNumberPattern: /^\d{11}$/,
-  },
-  UBPHPHMMXXX: {
-    name: 'UNION BANK OF THE PHILIPPINES',
-    accountNumberPattern: /^\d{12}$/,
-  },
-};
+// Keys defined in EMV® QR Code Specification for Payment Systems (EMV QRCPS)
+const BANK_INFO_KEY = '27'; // Merchant Account Information
+const BANK_INFO_KEY_ALT = '28'; // Merchant Account Information
+const SWIFT_CODE_KEY = '01'; // Payment network specific
+const ACCOUNT_NUMBER_KEY = '04'; // Payment network specific
+const COUNTRY_CODE_KEY = '58'; // Country Code
+const NAME_KEY = '59'; // Merchant Name
+const CITY_KEY = '60'; // Merchant City
 
 export {
   BANK_INFO_KEY,
+  BANK_INFO_KEY_ALT,
   SWIFT_CODE_KEY,
   ACCOUNT_NUMBER_KEY,
   COUNTRY_CODE_KEY,
   NAME_KEY,
   CITY_KEY,
-  SWIFT_CODE_BANK_INFO,
+  BANK_INFO,
 };
