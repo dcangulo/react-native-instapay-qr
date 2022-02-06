@@ -5,7 +5,7 @@ function requiredFieldError(field) {
 }
 
 function fieldLengthError(field, length, exact = true) {
-  return `Field ${field} must be ${length} characters ${exact ? '' : 'or less'} long.`;
+  return `Field ${field} must be ${length} characters ${exact ? '' : 'or less '}long.`;
 }
 
 export default function getErrors(qrData) {
