@@ -7,8 +7,8 @@ export default function NativeCamera({ onBarCodeScanned, style }) {
 
   useEffect(() => {
     const codeReader = new BrowserQRCodeReader();
-    const decoder = codeReader.decodeFromVideoDevice(null, elementRef.current, ({ text }) => {
-      if (text) onBarCodeScanned({ data: text });
+    const decoder = codeReader.decodeFromVideoDevice(null, elementRef.current, (result) => {
+      if (result?.text) onBarCodeScanned({ data: result?.text });
     });
 
     return () => decoder.then((controls) => controls.stop());
