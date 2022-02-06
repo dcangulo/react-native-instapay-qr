@@ -17,12 +17,7 @@ yarn add react-native-instapay-qr
 npx pod-install # iOS Only
 ```
 
-### Native (Web)
-```bash
-yarn add react-native-instapay-qr @zxing/library @zxing/browser
-```
-
-### Expo
+## Installation (Expo)
 ```bash
 expo install react-native-instapay-qr expo-camera expo-barcode-scanner
 npx pod-install # iOS Only
