@@ -1,1 +1,5 @@
 node_modules
+android/.gradle
+.DS_Store
+project.xcworkspace
+xcuserdata

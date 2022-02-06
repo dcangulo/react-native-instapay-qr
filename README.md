@@ -6,14 +6,28 @@
 Extract relevant data from InstaPay QR code.
 
 ## Compatibility
-|         | iOS                | Android            | Web                | Windows | macOS |
-|---------|--------------------|--------------------|--------------------|---------|-------|
-| Expo    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:     | :x:   |
-| Vanilla | :x:                | :x:                | :x:                | :x:     | :x:   |
+|         | iOS                | Android            | Web                | Windows         | macOS           |
+|---------|--------------------|--------------------|--------------------|-----------------|-----------------|
+| Expo    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :no_entry_sign: | :no_entry_sign: |
+| Native  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:             | :x:             |
 
 ## Installation
 ```bash
 yarn add react-native-instapay-qr
+npx pod-install # iOS Only
+```
+
+### Android
+Add the following to your `AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
+### iOS
+Add the following to your `Info.plist`:
+```xml
+<key>NSCameraUsageDescription</key>
+<string/>
 ```
 
 ## Installation (Expo)
@@ -25,14 +39,25 @@ npx pod-install # iOS Only
 
 ## Usage
 ```js
+import { useState } from 'react';
 import InstaPayQr from 'react-native-instapay-qr';
 
 function App() {
+  const [scanning, setScanning] = useState(true);
+
+  const onRead = (data, errors) {
+    if (errors.length > 0) return;
+
+    console.log(data);
+    setScanning(false);
+  };
+
   return (
     <InstaPayQr
-      containerStyle={{ height: 300, width: 300 }}
+      style={{ height: 300, width: 300 }}
       cameraStyle={{ flex: 1 }}
-      onRead={(data) => console.log(data)}
+      onRead={onRead}
+      scanning={scanning}
     />
   );
 }
@@ -51,12 +76,13 @@ function App() {
 ```
 
 ## Props
-| Attribute      | Type               | Default      |
-| -------------- | ------------------ | ------------ |
-| containerStyle | React Native Style | `{}`         |
-| cameraStyle    | React Native Style | `{}`         |
-| onRead         | Function           | `() => null` |
-| children       | Node               | `null`       |
+| Attribute   | Type               | Default      |
+| ----------- | ------------------ | ------------ |
+| style       | React Native Style | `{}`         |
+| cameraStyle | React Native Style | `{}`         |
+| onRead      | Function           | `() => null` |
+| scanning    | Boolean            | `true`       |
+| children    | Node               | `null`       |
 
 ## Changelogs
 See [CHANGELOGS.md](CHANGELOGS.md)
