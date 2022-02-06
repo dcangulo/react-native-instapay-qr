@@ -17,6 +17,12 @@ yarn add react-native-instapay-qr
 npx pod-install # iOS Only
 ```
 
+#### Android
+Add the following to your `AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+```
+
 ## Installation (Expo)
 ```bash
 expo install react-native-instapay-qr expo-camera expo-barcode-scanner
