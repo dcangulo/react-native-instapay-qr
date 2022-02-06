@@ -17,10 +17,17 @@ yarn add react-native-instapay-qr
 npx pod-install # iOS Only
 ```
 
-#### Android
+### Android
 Add the following to your `AndroidManifest.xml`:
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
+```
+
+### iOS
+Add the following to your `Info.plist`:
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Pls allow</string>
 ```
 
 ## Installation (Expo)
