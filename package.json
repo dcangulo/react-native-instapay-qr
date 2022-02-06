@@ -1,6 +1,6 @@
 {
   "name": "react-native-instapay-qr",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Extract relevant data from InstaPay QR code.",
   "license": "MIT",
   "homepage": "https://github.com/dcangulo/react-native-instapay-qr",
