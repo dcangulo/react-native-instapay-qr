@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { BrowserQRCodeReader } from '@zxing/library';
+import { BrowserQRCodeReader } from '@zxing/browser';
 import { defaultProps, propTypes } from './camera-props';
 
 export default function NativeCamera({ onBarCodeScanned, style }) {
