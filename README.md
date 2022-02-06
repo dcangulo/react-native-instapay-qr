@@ -84,6 +84,9 @@ function App() {
 | scanning    | Boolean            | `true`       |
 | children    | Node               | `null`       |
 
+## Upgrading
+See [UPGRADING.md](UPGRADING.md)
+
 ## Changelogs
 See [CHANGELOGS.md](CHANGELOGS.md)
 
