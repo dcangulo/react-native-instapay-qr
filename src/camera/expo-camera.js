@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { defaultProps, propTypes } from './camera-props';
 import { Camera, BarCodeScanner } from '../utilities/expo-modules';
 
 export default function ExpoCamera({ onBarCodeScanned, style }) {
@@ -13,12 +13,5 @@ export default function ExpoCamera({ onBarCodeScanned, style }) {
   );
 }
 
-ExpoCamera.defaultProps = {
-  style: {},
-  onBarCodeScanned: () => null,
-};
-
-ExpoCamera.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  onBarCodeScanned: PropTypes.func,
-};
+ExpoCamera.defaultProps = defaultProps;
+ExpoCamera.propTypes = propTypes;

@@ -1,28 +1,21 @@
-import React, { useEffect } from 'react';
-import { NativeModules, NativeEventEmitter, requireNativeComponent } from 'react-native';
-import PropTypes from 'prop-types';
-
-const NativeCameraComponent = requireNativeComponent('InstaPayQr');
-const { InstaPayQrManager, InstaPayQrEventEmitter } = NativeModules;
+import React, { useEffect, useRef } from 'react';
+import { BrowserQRCodeReader } from '@zxing/browser';
+import { defaultProps, propTypes } from './camera-props';
 
 export default function NativeCamera({ onBarCodeScanned, style }) {
-  useEffect(() => {
-    const nativeEvent = InstaPayQrManager ?? InstaPayQrEventEmitter;
-    const eventEmitter = new NativeEventEmitter(nativeEvent);
-    const eventListener = eventEmitter.addListener('onInstaPayQrRead', onBarCodeScanned);
+  const elementRef = useRef(null);
 
-    return () => eventListener.remove();
+  useEffect(() => {
+    const codeReader = new BrowserQRCodeReader();
+    const decoder = codeReader.decodeFromVideoDevice(null, elementRef.current, (result) => {
+      if (result?.text) onBarCodeScanned({ data: result?.text });
+    });
+
+    return () => decoder.then((controls) => controls.stop());
   }, [onBarCodeScanned]);
 
-  return <NativeCameraComponent style={style} />;
+  return <video ref={elementRef} style={style} />;
 }
 
-NativeCamera.defaultProps = {
-  style: {},
-  onBarCodeScanned: () => null,
-};
-
-NativeCamera.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  onBarCodeScanned: PropTypes.func,
-};
+NativeCamera.defaultProps = defaultProps;
+NativeCamera.propTypes = propTypes;
