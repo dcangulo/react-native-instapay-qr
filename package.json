@@ -23,7 +23,7 @@
     "QR"
   ],
   "dependencies": {
-    "@zxing/browser": "^0.0.10",
+    "@zxing/browser": "^0.1.1",
     "@zxing/library": "^0.19.1",
     "prop-types": "^15.8.1"
   },
