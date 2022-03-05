@@ -360,10 +360,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@zxing/browser@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@zxing/browser/-/browser-0.0.10.tgz#63c0a762fc2fd4ee946a20953ef24fab225698a9"
-  integrity sha512-P2wQc5fs+cjSc39zFS4UDhejWqdikf4FjuWIlFrzXD8fOsZ4ASfmLDKGeg7mRgmJq11oMKcVXvFFI6kcIKtxuQ==
+"@zxing/browser@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@zxing/browser/-/browser-0.1.1.tgz#f5d6c0a57bda3b223539eadfa3d87c1260e0536f"
+  integrity sha512-fdcHrvvno1NnoiY5++kn/h2b9QnBNyqtK1JqbfY3dfmTdwyXCJr/aT2ZGyRcfe0D3I/THu1I5VJAcpoU0svQMQ==
   optionalDependencies:
     "@zxing/text-encoding" "^0.9.0"
 
