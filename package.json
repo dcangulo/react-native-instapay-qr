@@ -37,7 +37,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-react-native": "^4.0.0",
-    "husky": "^7.0.4"
+    "husky": "^8.0.1"
   },
   "peerDependencies": {
     "react": "*",
