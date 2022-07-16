@@ -28,7 +28,7 @@
     "prop-types": "^15.8.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.1.0",
+    "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "eslint": "^8.8.0",
     "eslint-config-airbnb": "^19.0.4",
